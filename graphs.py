@@ -114,10 +114,10 @@ def plot_results(fixed, shapes, colors, hw):
                 and key_parts[2] == hw  # Filter by hardware/gpu
             ):
                 shape = key_parts[{'dtype': 1, 'model_size': 0, 'input_size': 3, 'gpu': 2}[shapes]]
-                color = key_parts[{'dtype': 1, 'model_size': 0, 'input_size': 3, 'gpu': 2}[colors]]
+                color = key_parts[{'dtype': 1, 'model_size': 0, 'input_size': 3, 'gpu': 2}[shapes]]
 
                 plt.scatter(fps, median_error, label=f"{shape:<6} {color:<6}", 
-                            color=current_colors[color], marker='o', s=400) #current_markers[shape]
+                            color="blue", marker=current_markers[color], s=400) #current_markers[shape]
 
         #plt.gca().invert_xaxis()
         plt.gca().invert_yaxis()
@@ -128,8 +128,8 @@ def plot_results(fixed, shapes, colors, hw):
         plt.grid(True, linestyle='--', alpha=0.7)
         plt.yticks(fontsize=18)
         plt.xticks(fontsize=19)
-        #plt.show()
-        plt.savefig(f'graph{fixed_val}.pdf', bbox_inches='tight')
+        plt.show()
+        #plt.savefig(f'graph{fixed_val}.pdf', bbox_inches='tight')
         #break
 
 # Example usage
