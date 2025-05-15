@@ -45,15 +45,10 @@ def plot_results(fixed, shapes, colors, hw):
                 and key_parts[2] == hw  # Filter by hardware/gpu
             ):
                 shape = key_parts[{'dtype': 1, 'model_size': 0, 'input_size': 3, 'gpu': 2}[shapes]]
-                color = key_parts[{'dtype': 1, 'model_size': 0, 'input_size': 3, 'gpu': 2}[shapes]]
+                color = key_parts[{'dtype': 1, 'model_size': 0, 'input_size': 3, 'gpu': 2}[colors]]
 
-<<<<<<< HEAD
                 plt.scatter(fps, recall, label=f"{shape:<6} {color:<6}", 
                             color='black', marker='o', s=400) #current_markers[shape] current_colors[color]
-=======
-                plt.scatter(fps, median_error, label=f"{shape:<6} {color:<6}", 
-                            color="blue", marker=current_markers[color], s=400) #current_markers[shape]
->>>>>>> 4db7e5c865ecd34dbfb059787582bc5842f8a95b
 
         #plt.gca().invert_xaxis()
         #plt.title(f"Graph for fixed {fixed}: {fixed_val} (HW: {hw})", fontsize=16)
@@ -68,8 +63,8 @@ def plot_results(fixed, shapes, colors, hw):
         plt.grid(True, linestyle='--', alpha=0.7)
         plt.yticks(fontsize=18)
         plt.xticks(fontsize=19)
-        plt.show()
-        #plt.savefig(f'graph{fixed_val}.pdf', bbox_inches='tight')
+        #plt.show()
+        plt.savefig(f'graph{fixed_val}.pdf', bbox_inches='tight')
         #break
 
 # Example usage
